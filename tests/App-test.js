@@ -5,7 +5,6 @@
 import 'react-native';
 import React from 'react';
 import App from '../App';
-import { Item } from 'react-native/Libraries/Components/Picker/Picker';
 
 describe('Jest', () => {
   it('is it working?', () => {
