@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "npx react-native run-ios",
-    "start": "npx react-native start",
-    "test": "jest",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest __tests__/*test.js",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -18,7 +18,6 @@
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",
-    "detox": "^15.4.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.5.1",
@@ -28,19 +27,9 @@
     "react-test-renderer": "16.9.0"
   },
   "jest": {
-    "preset": "react-native"
-  },
-  "detox": {
-    "test-runner": "jest",
-    "configurations": {
-      "ios.sim.debug": {
-        "binaryPath": "ios/build/TDDRN/Build/Products/Debug-iphonesimulator/TDDRN.app",
-        "build": "xcodebuild -project ios/example.xcodeproj -scheme example -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
-        "type": "ios.simulator",
-        "device": {
-          "type": "iPhone 11 Pro"
-        }
-      }
-    }
+    "preset": "react-native",
+    "setupFiles": [
+      "./__tests__/setup.js"
+    ]
   }
 }
