@@ -1,7 +1,6 @@
 import 'react-native';
 import React from 'react';
 import App from '../App';
-import {Text} from 'react-native';
 import {shallow} from 'enzyme';
 
 describe('App', () => {
