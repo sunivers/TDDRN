@@ -1,7 +1,9 @@
-import { Component } from "react";
+import React, {Component} from 'react';
+import {FlatList} from 'react-native';
 
 export default class TodoList extends Component {
   render() {
-    return null;
+    const {items} = this.props;
+    return <FlatList data={items} />;
   }
 }
