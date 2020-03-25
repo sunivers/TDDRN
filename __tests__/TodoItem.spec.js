@@ -37,3 +37,41 @@ describe('Rendering', () => {
     });
   });
 });
+
+describe('Interaction', () => {
+  let wrapper;
+  let props;
+
+  describe('Complete feature', () => {
+    beforeEach(() => {
+      props = {
+        index: 0,
+        onCompleted: jest.fn(),
+      };
+      wrapper = shallow(<TodoItem {...props} />);
+  
+      wrapper.find('Button').at(0).prop('onPress')();
+    });
+  
+    it('should call the onCompleted callback with index', () => {
+      expect(props.onCompleted).toHaveBeenCalledTimes(1);
+      expect(props.onCompleted).toHaveBeenCalledWith(props.index);
+    });
+  });
+
+  describe('Delete feature', () => {
+    beforeEach(() => {
+      props = {
+        index: 0,
+        onDelete: jest.fn(),
+      };
+      wrapper = shallow(<TodoItem {...props} />);
+  
+      wrapper.find('Button').at(1).prop('onPress')();
+    });
+    it('should call the onDelete callback with index', () => {
+      expect(props.onDelete).toHaveBeenCalledTimes(1);
+      expect(props.onDelete).toHaveBeenCalledWith(props.index);
+    });
+  })
+});
