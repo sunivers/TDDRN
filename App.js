@@ -5,7 +5,7 @@ import TodoList from './components/TodoList';
 
 const App = () => {
   return (
-    <View>
+    <View testID="welcome">
       <Text>Todo TDD</Text>
       <AddTodo></AddTodo>
       <TodoList></TodoList>
