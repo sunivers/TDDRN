@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, TextInput, Button } from 'react-native';
+import {View, TextInput, Button} from 'react-native';
 export default class AddTodo extends Component {
   state = {
     text: '',
@@ -16,8 +16,8 @@ export default class AddTodo extends Component {
   render() {
     return (
       <View>
-        <TextInput testID="textInput" onChangeText={this.onChangeText}></TextInput>
-        <Button testID="addButton" title="Add" onPress={this.onPress}></Button>
+        <TextInput testID="textInput" onChangeText={this.onChangeText} />
+        <Button testID="addButton" title="Add" onPress={this.onPress} />
       </View>
     );
   }
