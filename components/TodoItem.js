@@ -16,9 +16,9 @@ export default class TodoItem extends Component {
     onCompleted(index);
   };
 
-  onDelete = () => {
-    const {onDelete, index} = this.props;
-    onDelete(index);
+  onDeleted = () => {
+    const {onDeleted, index} = this.props;
+    onDeleted(index);
   };
 
   render() {
@@ -33,7 +33,7 @@ export default class TodoItem extends Component {
           testID="completeButton"
           onPress={this.onCompleted}
         />
-        <Button title="delete" onPress={this.onDelete} />
+        <Button title="delete" testID="deleteButton" onPress={this.onDeleted} />
       </View>
     );
   }
